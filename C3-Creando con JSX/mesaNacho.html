@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+    <script type="text/babel">
+      const titlesNavBar = ['Home', 'About', 'Career', 'Education'];
+      const movies = [
+        'Pirates of the Caribbean',
+        'Johnny scissors hand',
+        'Transcendent',
+      ];
+      const education = ['University of Arts', 'University of UCLA'];
+
+      const johnny = {
+        name: 'Pedro',
+        lastName: 'Perez',
+        age: 58,
+        nationality: 'Argentina',
+      };
+
+      function NavBar(props) {
+        const secciones = props.titles.map((title) => <li>{title}</li>);
+
+        const navBar = (
+          <div>
+            <ul>{secciones}</ul>
+          </div>
+        );
+        return navBar;
+      }
+
+      function PersonalInformation(props) {
+        const info = (
+          <div>
+            <h2>Name:</h2>
+            {props.informacion.name}
+            <h2>LastName:</h2>
+            {props.informacion.lastName}
+            <h2>Age:</h2>
+            {props.informacion.age}
+            <h2>Nacionality:</h2>
+            {props.informacion.nationality}
+          </div>
+        );
+        return info;
+      }
+
+      function TituloConLista(props) {
+        const listado = props.elements.map((element) => <li>{element}</li>);
+
+        const info = (
+          <div>
+            <h2>{props.title}</h2>
+            <ul>{listado}</ul>
+          </div>
+        );
+        return info;
+      }
+
+      ReactDOM.render(
+        <div>
+          <NavBar titles={titlesNavBar} />
+          <PersonalInformation informacion={johnny} />
+          <TituloConLista title="Experience in movies" elements={movies} />
+          <TituloConLista title="Education" elements={education} />
+          <div>
+            <h2>Bio:</h2>
+
+            <p>
+              <br /> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              <br /> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              <br /> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              <br /> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            </p>
+          </div>
+        </div>,
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>

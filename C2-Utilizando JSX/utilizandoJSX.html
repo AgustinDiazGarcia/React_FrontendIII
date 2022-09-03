@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creando Elementos con JSX</title>
+</head>
+<body>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+<div id="root"> </div>
+
+<script type="text/babel">
+
+const h2 = <h2>Listado</h2>
+const li1 = <li key={1}>soy</li>
+const li2 = <li key={2}>una</li>
+const li3 = <li key={3}>lista</li>
+       
+
+const div_el = (
+    <div>
+        {h2}
+        <ul>
+            {li1}
+            {li2}
+            {li3}
+        </ul>
+    </div>
+)
+
+ReactDOM.render(div_el, document.getElementById("root"));
+
+</script>
+</body>
+</html>
+
+

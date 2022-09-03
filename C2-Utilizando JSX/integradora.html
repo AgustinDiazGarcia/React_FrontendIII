@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock en verdulerí­a</title>
+  </head>
+
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+    <script type="text/babel">
+      /* CON MAP */
+      const stock = ['Manzana', 'Pera', 'Naranja', 'Banana', 'Kiwi'];
+      const sinStock = ['Durazno', 'Cereza', 'Anana'];
+
+      const lista = (
+        <div>
+          <h1>Lista de Productos en stock:</h1>
+          <ul>
+            {stock.map((fruta) => (
+              <li>{fruta}</li>
+            ))}
+          </ul>
+          <h2>Productos en falta:</h2>
+          <ul>
+            {sinStock.map((fruta) => (
+              <li>{fruta}</li>
+            ))}
+          </ul>
+        </div>
+      );
+
+      /* SIN MAP */
+      /* const lista = (
+              <div>
+                <h1>Lista de Productos en stock:</h1>
+                <ul>
+                  <li>Manzana</li>
+                  <li>Pera</li>
+                  <li>Naranja</li>
+                  <li>Banana</li>
+                  <li>Kiwi</li>
+                </ul>
+                <h2>Productos en falta:</h2>
+                <ul>
+                  <li>Durazno</li>
+                  <li>Cereza</li>
+                  <li>Anana</li>
+                </ul>
+              </div>
+            ); */
+
+      ReactDOM.render(lista, document.getElementById('root'));
+    </script>
+  </body>
+</html>
