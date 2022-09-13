@@ -1,0 +1,17 @@
+.container {
+  color: white;
+}
+
+.details {
+  font-size: 2rem;
+  width: 400px;
+  padding: 50px;
+  display: inline-block;
+  margin-left: 70px;
+}
+
+.name {
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+}
